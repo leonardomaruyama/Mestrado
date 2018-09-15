@@ -1,0 +1,13 @@
+  Factor1 Factor2
+A          0,247 
+B         -0,629 
+C  0,376   0,924 
+D  0,970  -0,237 
+E  0,945   0,324 
+F          0,643 
+G  0,694   0,299 
+
+               Factor1 Factor2
+SS loadings      2,465   1,976
+Proportion Var   0,352   0,282
+Cumulative Var   0,352   0,634

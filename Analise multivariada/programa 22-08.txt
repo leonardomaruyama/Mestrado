@@ -1,0 +1,132 @@
+X=read.table('http://socserv.mcmaster.ca/jfox/Books/Applied-Regression/Data/Anscombe.dat')
+head(X)
+apply(X[,-1],1,mean)
+boxplot(X[,-1])
+#boxplot(X[,2]~X[,1], ylab='V2',xlab='V1',col=c("green","yellow"))#x recomenda-se v.qualitativo
+
+data(trees)
+trees[1:10,]
+
+library(scatterplot3d)
+s3d=scatterplot3d(trees,type="h",highlight.3d=T,angle=55,scale.y=0.7,pch=16,main="")
+
+library(scatterplot3d)
+attach(trees)
+scatterplot3d(Girth,Height,Volume, main="Diagrama de dispersão",zlab="Volume",xlab=expression(x[1]),ylab=expression(x[2]),lwd=3)
+pairs(~Volume+Girth+Height,data=trees,     main=" Matriz de diagrama de dispesão", lwd=3)
+
+boxplot(trees)
+#X=trees
+#hist2=function(X){par(new=T);hist(X,main='')}
+#cor2=function(X,Y){text(10,65,round(cor(X,Y),4))}
+#pairs(X,diag.panel=hist2,upper.panel=panel.smooth,lower.panel=cor2)
+
+
+#duas variaveis
+attach(trees)
+plot(Girth,Volume ,xlab="perímetro",ylab="Volume", pch=20,col="red")#diagrama de dispersão
+#...................................
+X=matrix(rnorm(100*5),100,5)#r gera números aleatórios
+var(X)
+cov(X)
+cor(X)
+boxplot(X)
+#diagrama de dispersão de matrices
+hist1=function(X){par(new=T); hist(X,main='')}
+cor1=function(X,Y){text(0.5,0.5,round(cor(X,Y),4))}
+pairs(X,diag.panel=hist1,upper.panel=panel.smooth,lower.panel=cor1)
+
+#distribuição normal multivariada
+require(car)
+data(Prestige)
+attach(Prestige)
+names(Prestige)
+
+boxplot(Prestige[,-c(1,3,4,6)])
+boxplot(Prestige[,-c(2,5,6)])
+boxplot(Prestige[,c(1,6)])# não é valido errado
+boxplot(education~type)
+
+#curvas de nivel
+library(ellipse)
+dataEllipse(Prestige$education, Prestige$income, levels=0.95, 
+    ellipse.label=0.95, lty=2, fill=TRUE, fill.alpha=0.1)
+#
+
+
+par(mfrow=c(3,4))
+for(i in 1:5){
+ hist(Prestige[,i],main='',xlab='')
+ qqnorm(Prestige[,i],main='',xlab='')
+} 
+m=powerTransform(cbind(education,income,prestige,census))
+summary(m)
+par(mfrow=c(1,2))
+hist(bcPower(income,m$lambda[2]),nclass=10)
+qqnorm(bcPower(income,m$lambda[2]))
+
+#distribuição normal multiv
+
+dmm=function(m,C){
+  p=length(m)
+  len=20
+  z=matrix(NA,len,len)
+  x1=seq(-4,4,len=len)
+  x2=seq(-4,4,len=len)
+  invC=solve(C)
+
+  for(i in 1:len){
+     for(j in 1:len){
+      x=matrix(c(x1[i],x2[j]),2,1)
+      Q=(t(x-m))%*%invC%*%(x-m)
+      z[i,j]=1/sqrt((2*pi)^p*det(C))*exp(-0.5*Q)
+   }
+  }
+contour(x1,x2,z,draw=T,nlevels=20,labcex=0.8,xlab='x2',ylab='x1')
+persp(x1,x2,z,draw=T,nlevels=20,labcex=0.8,xlab='x2',ylab='x1')
+}
+#...............
+x=Prestige[,-6]
+n=nrow(x)
+p=ncol(x)
+#X=matrix(x,n,p)
+#dm=length(x)
+S=var(x)
+C=cor(x)
+m=apply(x,2,mean)
+eigen(C)
+lam=eigen(C)$values
+V=eigen(C)$vectors
+alpha=0.05
+#Uma elipse de confiaça 95%
+library(ellipse)
+plot(ellipse(S/n, centre=m, t=sqrt((n-1)*p*qf(1-alpha,p,n-p)/(n-p))),
+type="l",lwd=2,ylab=expression(mu[2]),xlab=expression(mu[1]),ylim=c(918,10100))
+points(m[1],m[2],col="red",lwd=3)
+
+
+X=as.matrix(x,p)
+C=cor(X)
+inv=solve(C)
+
+
+
+
+
+
+
+#......................................................
+
+# DADOS
+x1 = rnorm(500, mean=-2, sd=.5)
+x2 = rnorm(500, mean=2, sd=.5)
+x = append(x1,x2,after=500)
+x3 = rnorm(500, mean=0, sd=.5)
+x = append(x,x3,after=1000)
+y1 = rnorm(500, mean=2, sd=.5)
+y2 = rnorm(500, mean=2, sd=.5)
+y = append(y1,y2,after=500)
+y3 = rnorm(500, mean=-2, sd=.5)
+y = append(y,y3,after=1000)
+dados=data.frame(x,y)
+plot(dados)

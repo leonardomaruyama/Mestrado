@@ -1,0 +1,26 @@
+;;Chamados;;Tempo Médio;;;
+Subátomos;;Qtde.;pj;Fila;Viagem;Resposta;Serviço
+1a;Nações Azul;6;0,0255;27,70;18,20;45,80;41,60
+1b;Nações Verde;20;0,0851;25,00;9,60;32,70;41,90
+1c;Nações Amarelo;31;0,1319;7,30;7,40;14,50;38,20
+1d;Nações Vermelho;0;0,0000;0,00;0,00;0,00;0,00
+2a;Geisel Azul;1;0,0043;23,00;10,00;33,00;40,00
+2b;Geisel Verde;14;0,0596;20,10;13,80;33,90;47,20
+2c;Geisel Amarelo;24;0,1021;10,90;9,40;19,20;51,30
+2d;Geisel Vermelho;16;0,0681;10,10;13,80;23,80;57,10
+3a;Ipiranga Azul;4;0,0170;46,30;12,30;66,00;47,70
+3b;Ipiranga Verde;14;0,0596;27,40;12,30;37,90;42,20
+3c;Ipiranga Amarelo;11;0,0468;10,80;8,20;18,50;37,60
+3d;Ipiranga Vermelho;0;0,0000;0,00;0,00;0,00;0,00
+4a;Bela Vista Azul;7;0,0298;35,40;19,50;46,60;28,70
+4b;Bela Vista Verde;20;0,0851;26,30;11,40;35,50;46,90
+4c;Bela Vista Amarelo;26;0,1106;9,00;8,50;16,40;52,00
+4d;Bela Vista Vermelho;1;0,0043;5,00;8,00;13,00;47,00
+5a;Mary Dota Azul;3;0,0128;16,70;12,30;29,00;50,00
+5b;Mary Dota Verde;15;0,0638;19,80;9,90;29,10;45,10
+5c;Mary Dota Amarelo;9;0,0383;8,30;5,50;13,20;42,60
+5d;Mary Dota Vermelho;0;0,0000;0,00;0,00;0,00;0,00
+6a;Boulevard Azul;2;0,0085;28,50;18,00;70,00;30,00
+6b;Boulevard Verde;3;0,0128;21,30;14,00;35,30;48,70
+6c;Boulevard Amarelo;8;0,0340;8,80;6,10;14,10;48,80
+6d;Boulevard Vermelho;0;0,0000;0,00;0,00;0,00;0,00

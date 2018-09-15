@@ -1,0 +1,35 @@
+dados=read.table("dados.txt",header=T)
+X=dados[,-c(1,2)]
+lab=dados[,1]
+Z=scale(X) ##Padroniza as obs
+D=dist(X,method='euclidean', diag=TRUE, upper=TRUE) #matriz de distancia
+D1=dist(Z,method='euclidean', diag=TRUE, upper=TRUE) #matriz de distancia
+require(graphics)
+layout(rbind(c(0,1,1,0), c(2,2,3,3)))
+par(mai=c(0.7,0.65,0.30,0.05))
+seg=hclust(D1, method="single")
+seg1=hclust(D1, method="complete")
+seg2=hclust(D1, method="average")
+plot(seg,label=lab,hang=-1,ann=F)
+title(main="Dendrograma-Vizinho mais próximo", ylab="distância entre países",xlab="")
+plot(seg1,label=lab,hang=-1,ann=F)
+title(main="Dendrograma-Vizinho mais longe", ylab="distância entre países",xlab="")
+plot(seg2,label=lab,hang=-1,ann=F)
+title(main="Dendrograma-Vizinho mais média", ylab="distância entre países",xlab="")
+
+dados=read.table("dados2.txt",header=T)
+#Z=scale(dados)
+## Ward Hierarchical Clustering
+d<-dist(Z,method="euclidean") #distance matrix
+fit<-hclust(d, method="ward")
+plot(fit)
+groups <- cutree(fit, k=3) #cut tree into 3 clusters
+#draw dendrogram with red borders around the 3 clusters
+rect.hclust(fit,k=3,border="red")
+par(mfrow=c(2,2)) #para mais gráficos
+##
+seg = hclust(dist(dados,method='euclidean'),method="ward")
+plot(seg,,hang=-1)
+lab=c("E1","E2","E3","E4","E5","E6","E7","E8","E9","E10","E11","E12","E13","E14","E15","E16","E17","E18","E19","E20","E21","E22")
+pclust(seg,labels=lab,main="Dendrograma-Vizinho mais próximo", ylab="distância entre países
+rect.hclust(seg,k=4,border="red")

@@ -1,0 +1,24 @@
+Standardized loadings (pattern matrix) based upon correlation matrix
+    PC1   PC2   h2    u2
+A  0,49 -0,21 0,28 0,718
+B -0,55  0,66 0,74 0,256
+C  0,83 -0,25 0,75 0,250
+D  0,52  0,79 0,90 0,102
+E  0,85  0,47 0,93 0,066
+F  0,58 -0,67 0,79 0,205
+G  0,84  0,32 0,80 0,197
+
+                       PC1  PC2
+SS loadings           3,25 1,95
+Proportion Var        0,46 0,28
+Cumulative Var        0,46 0,74
+Proportion Explained  0,63 0,37
+Cumulative Proportion 0,63 1,00
+
+Test of the hypothesis that 2 components are sufficient,
+
+The degrees of freedom for the null model are  21  and the objective function was  18,76
+The degrees of freedom for the model are 8  and the objective function was  14,46 
+The total number of observations was  38  with MLE Chi Square =  470,03  with prob <  1,9e-96 
+
+Fit based upon off diagonal values = 0,95> 

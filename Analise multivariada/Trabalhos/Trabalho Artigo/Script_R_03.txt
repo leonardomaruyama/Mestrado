@@ -1,0 +1,24 @@
+dados=read.table("dados.txt",header=T)
+dados=scale(dados)
+(c1<-kmeans(dados,4))
+plot(dados,col=cl$cluster)
+identify(dados[,1],dados[,2],labels=1:nrow(dados))
+points(cl$centers, col=1:2, pch=8, cex=2)
+
+dados=read.table("tabela15.txt",header=T,dec=",")
+X=dados[,-c(1,2)]
+X=scale(X)
+(c1<-kmeans(X,2))
+cbind(dados,cl$clust)
+
+#K-Means Clustering with 5 clusters
+fit<-kmeans(X,4)
+
+#Cluster Plot against lst 2 principal components
+
+#vary parameters for most readable graph
+
+library(cluster)
+clusplot(X, fit$cluster, color=TRUE, shade=TRUE, labels=2, lines=0)
+###
+-Means Cluster Analysis

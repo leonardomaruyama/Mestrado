@@ -1,0 +1,6 @@
+Est_Civ	G_Int	Salario
+Solteiro	Superior	5000
+Casado	Segundo Grau	2000
+Solteiro	Superior	6000
+Solteiro	Segundo Grau	3000
+Casado	Segundo Grau	5000
